@@ -117,7 +117,7 @@ def get_files_changed(root, get_urls=False):
         return []
     assert files[-1] == "\0"
     if (get_urls):
-        base = "http://w3c-test.org/submission/%s" % os.environ['TRAVIS_PULL_REQUEST']
+        base = "https://w3c-test.org/submission/%s" % os.environ['TRAVIS_PULL_REQUEST']
         return ["%s/%s" % (base, item) for item in files[:-1].split("\0")]
     return ["%s/w3c/web-platform-tests/%s" % (root, item)
             for item in files[:-1].split("\0")]
